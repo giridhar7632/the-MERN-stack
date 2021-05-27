@@ -2,7 +2,7 @@
 
 ## Home
 
-The MERN stack is a popular combination of several technologies which uses only JavaScript. In other words, you can develop full-stack web applications using only JavaScript. In the MERN stack you'll combine the amazing powers of client-side framework **[React](https://reactjs.org)** with the server-side technologies such as **[Node](https://nodejs.org)**, **[Express](https://expresjs.org)**, and **[MongoDB](https://mongodb.com)** to develop real world full-stack web applications. In this tutorial, youl'll learn how to build the back-end of the web application using Node, Express, MongoDB and intergrate it to the front-end which was built using React and Chakra UI.
+The MERN stack is a popular combination of several technologies which uses only JavaScript. In other words, you can develop full-stack web applications using only JavaScript. In the MERN stack you'll combine the amazing powers of client-side framework **[React](https://reactjs.org)** with the server-side technologies such as **[Node](https://nodejs.org)**, **[Express](https://expressjs.com)**, and **[MongoDB](https://mongodb.com)** to develop real world full-stack web applications. In this tutorial, youl'll learn how to build the back-end of the web application using Node, Express, MongoDB and intergrate it to the front-end which was built using React and Chakra UI.
 
 ## Audience
 
