@@ -25,6 +25,32 @@ After running `npm start`, it runs a server on posrt 3000 and open the browser a
 
 If any error occurs, visit the [create react app](https://create-react-app.dev) website for trouble-shooting.
 
+## Dependencies
+
+### Axios
+
+Axios is a small dependency which makes it easy for us to make promise based HTTP requests.
+
+```
+npm install axios
+```
+
+### React oruter DOM
+
+React Router DOM is a dependency for making navigation between components of our application.
+
+```
+npm install react-router-dom
+```
+
+### Timeago.js
+
+It is a small package to format date and time in form `*** time ago`.
+
+```
+npm install timeago.js
+```
+
 ## Git
 
 Additionally, you should download git. It is a version control system that enables tracking code changes, code sharing, and collaboration.
