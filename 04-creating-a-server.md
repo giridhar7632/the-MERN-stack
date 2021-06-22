@@ -118,3 +118,23 @@ The response sends a status of the request, in our case `200` means OK. There ar
 Then we use `send` method to send a string as a response. You can also send [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) objects using the `json` method.
 
 Learn more about [HTTP status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) here and try to add more endpoints and send different types of data as a response.
+
+## Middleware
+
+[Middleware](https://expressjs.com/en/guide/using-middleware.html) functions are functions that has access to the request object, the response object and the next function in request-response cycle. They can execute any code and can make changes to the request and response objects. If they don't send the response after execution, they start executing the `next` function given as third argument. There are many types of middleware functions. In this project, we will use some of the built-in middleware functions and a third-party middleware function.
+
+```js
+// ...
+
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(cors())
+
+// ...
+```
+
+Here, [express.json](https://expressjs.com/en/4x/api.html#express.json) and [express.urlencoded](https://expressjs.com/en/4x/api.html#express.urlencoded) are the built-in middleware functions comes with express version 4.x. The [express.json](https://expressjs.com/en/4x/api.html#express.json) middleware parses the incoming requests with JSON payloads and the [express.urlencoded](https://expressjs.com/en/4x/api.html#express.urlencoded) parses incoming requests with URL-encoded payloads.
+
+The `cors()` is the third-party middleware function used to enable Cross origin requests.
+
+You can find the progress of the project [here]().
