@@ -8,8 +8,10 @@ This is a project guided tutorial on developing full-stack web applications usin
 
 ### INSTALLATION
 
-2. [THE **MERN** STACK — BACK-END SETUP]()
-3. [THE **MERN** STACK — FRONT-END SETUP]()
+
+2. [THE **MERN** STACK — FRONT-END SETUP]()
+3. [THE **MERN** STACK — BACK-END SETUP]()
+
 
 ### BUILDING THE BACK-END
 
