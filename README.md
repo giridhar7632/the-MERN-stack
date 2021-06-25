@@ -4,33 +4,30 @@ This is a project guided tutorial on developing full-stack web applications usin
 
 ## Table of Contents
 
-1. [THE **MERN** STACK — INTRODUCTION]()
+1. [THE **MERN** STACK — INTRODUCTION](/01-introduction.md)
 
 ### INSTALLATION
 
-
-2. [THE **MERN** STACK — FRONT-END SETUP]()
-3. [THE **MERN** STACK — BACK-END SETUP]()
-
+2. [THE **MERN** STACK — BACK-END SETUP](/02-backend-setup.md)
+3. [THE **MERN** STACK — FRONT-END SETUP](/03-frontend-setup.md)
 
 ### BUILDING THE BACK-END
 
-4. [THE **MERN** STACK — CREATING A SERVER]()
-5. [THE **MERN** STACK — CONNECTING TO MONGODB]()
-6. [THE **MERN** STACK — USER MODEL]()
-7. [THE **MERN** STACK — NOTES MODEL]()
-8. [THE **MERN** STACK — AUTHENTICATION]()
-9. [THE **MERN** STACK — API ROUTES]()
-10. [THE **MERN** STACK — **CRUD** OPERATIONS]()
-11. [THE **MERN** STACK — PROTECTED USER ROUTES]()
-12. [THE **MERN** STACK — EXPRESS-JWT]()
-13. [THE **MERN** STACK — ERROR-HANDLING]()
+4. [THE **MERN** STACK — CREATING A SERVER](/04-creating-a-server.md)
+5. [THE **MERN** STACK — CONNECTING TO MONGODB](/05-connecting-to-mongoDB.md)
+6. [THE **MERN** STACK — MONGODB MODELS](/06-mongo-models.md)
+7. [THE **MERN** STACK — USER AUTHENTICATION](/07-user-api-endpoints.md)
+8. [THE **MERN** STACK — NOTES CRUD API](/08-notes-crud-api.md)
+9. [THE **MERN** STACK — TESTING API ROUTES](/09-testing-routes.md)
 
 ### CREATING THE FRONT-END
 
-14. [THE **MERN** STACK — REACT HOME PAGE]()
-15. [THE **MERN** STACK — USER AUTH COMPONENTS]()
-16. [THE **MERN** STACK — NOTES COMPONENTS]()
-17. [THE **MERN** STACK — CONNECTING BACK-END TO FRONT-END]()
-18. [THE **MERN** STACK — DEPLOYMENT]()
-19. [THE **MERN** STACK — FINISH]()
+10. [THE **MERN** STACK — REACT FRONT-END PART 1](/10-react-fornt-end-1.md)
+11. [THE **MERN** STACK — REACT FRONT-END PART 2](/11-react-fornt-end-2.md)
+
+## COMMUNICATING WITH SERVER
+
+12. [THE **MERN** STACK — REGISTRATION AND USER LOGIN](/12-registration-and-user-login.md)
+13. [THE **MERN** STACK — NOTES CRUD IMPLEMENTATION](/13-notes-crud.md)
+14. [THE **MERN** STACK — DEPLOYMENT](/14-deployment.md)
+15. [THE **MERN** STACK — FINISH](/.md)
