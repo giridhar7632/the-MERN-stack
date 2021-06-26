@@ -1,4 +1,4 @@
-THE **MERN** STACK — CONNECTING TO MONGODB
+# THE **MERN** STACK — CONNECTING TO MONGODB
 
 In this project, we use [MongoDB](https://www.mongodb.com/) as a database to store the data. MongoDB is a [document database](https://en.wikipedia.org/wiki/Document-oriented_database) that stores data in JSON format, which is easily accessible using JavaScript.
 
@@ -8,21 +8,25 @@ Basically you can install and run MongoDb on your own computer. However, we are 
 
 Go ahead and create an account at [https://cloud.mongodb.com]. Once you've created and logged into your account, create a [cluster](https://www.mongodb.com/basics/clusters). You can choose the provider and region whatever you want, I prefer using the recommended ones.
 
-![Cluster AWS]()
+![Cluster AWS](/assests/09-mongo_aws.png)
 
 Click on create cluster button and your Mongo cluster will be ready in lessthan 5 minutes. You should add the user who can use the cluster and an IP address from where to use the cluster.
 
-Click on the `Connect` button. It asks you to add an IP address and a user. For IP address, click on Allow `Access from Anywhere` to keep it simple.
+Click on the `Connect` button. 
 
-![IP allow access from everywhere]()
+![connect](/assests/15-connect_to_db.png)
+
+It asks you to add an IP address and a user. For IP address, click on Allow `Access from Anywhere` to keep it simple.
+
+![IP allow access from everywhere](/assests/10-add_ip.png)
 
 Then add the database user. Make sure you remember the password. It is very important in the next step to connect our application to MongoDB Atlas.
 
-![MongoDB user]()
+![MongoDB user](/assests/11-create_db_user.png)
 
 Click on Choose a connection method and then choose the method "Connect your application".
 
-![Connect your application]()
+![Connect your application](/assests/12-choose_conn_method.png)
 
 This gives you the [Mongo URI](https://docs.mongodb.com/manual/reference/connection-string/), the connection string you need to establish connection with MongoDB. The URL looks like this:
 
@@ -60,7 +64,7 @@ This uses [`connect`](https://mongoosejs.com/docs/api/mongoose.html#mongoose_Mon
 
 Run the command `npm run dev` and now you see the message 'MongoDB connection is established successfully 🎉' after it connects to database. If any error occurs, read the error message and try to troubleshoot the problem.
 
-![connections]()
+![connections](/assests/13-MongoDB_connection.png)
 
 ## Using environment variables
 
@@ -103,3 +107,5 @@ node_modules
 ```
 
 You should not upload `node_modules` as well, it contains thousands of files which are neccessary to upload to git. 
+
+You can see the progress of the project [here](https://github.com/giridhar7632/mern-notes-app/tree/5606c7631bc7e26b367aef2734bbf277b61b1d9b).

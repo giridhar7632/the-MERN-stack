@@ -30,4 +30,3 @@ This is a project guided tutorial on developing full-stack web applications usin
 12. [THE **MERN** STACK — REGISTRATION AND USER LOGIN](/12-registration-and-user-login.md)
 13. [THE **MERN** STACK — NOTES CRUD IMPLEMENTATION](/13-notes-crud.md)
 14. [THE **MERN** STACK — DEPLOYMENT](/14-deployment.md)
-15. [THE **MERN** STACK — FINISH](/.md)

@@ -1,6 +1,6 @@
 # THE **MERN** STACK — USER AUTHENTICATION
 
-Now let's start creating the API endpoints for Authentication for users. Create two new folders called `routes` and `controllers`. The `routes` folder is to store the entire routes required for our application and `controllers` folder is to write the functions of the routes.
+Now let's start creating the API endpoints for Authentication for users. Create two new folders called `routes` and `controllers`. The `routes` folder is to store the entire routes required for our application and the `controllers` folder is to write the functions of the routes.
 
 ## API endpoints for user
 
@@ -12,7 +12,7 @@ Now let's start creating the API endpoints for Authentication for users. Create 
 
 ## User Router
 
-Create a file `userRouter.js` in `routes` folder.
+Create a file `userRouter.js` in the `routes` folder.
 
 ```js
 // userRouter.js
@@ -29,9 +29,9 @@ router.post('/login', userCtrl.loginUser)
 module.exports = router
 ```
 
-Basically, we send the data of the HTML form to the endpoint to register or login a user. To keep our code clean and readable, we create the route functions in `controllers` folder and import them into the Router files just like in the above code. 
+We send the data of the HTML form to the endpoint to register or log in a user. To keep our code clean and readable, we create the route functions in the `controllers` folder and import them into the Router files just like in the above code. 
 
-You should not forget to add base route for the routes you create. Import these routes into and index.js file and use the method `use` to create the base routes.
+You should not forget to add a base route for the routes you create. Import these routes into `index.js` file and use the method `use` to create the base routes.
 
 ```js
 // index.js
@@ -47,7 +47,7 @@ app.use('/users', userRouter)
 
 ## User Controllers
 
-Create a new file in `controllers` folder and name it as `userCtrl.js`. Let's create the `registerUser` and `loginUser` functions in `userCtrl`. We need the `User` model we created before and `bcrypt` to [hash](https://auth0.com/blog/hashing-in-action-understanding-bcrypt/) the password. We should not save the passwords as it is. They are the secrets of our clients so we shoud save the encrypted passwords in the database.
+Create a new file in the `controllers` folder and name it as `userCtrl.js`. Let's create the `registerUser` and `loginUser` functions in `userCtrl`. We need the `User` model we created before and `bcrypt` to [hash](https://auth0.com/blog/hashing-in-action-understanding-bcrypt/) the password. We should not save the passwords as it is. They are the secrets of our clients so we should save the encrypted passwords in the database.
 
 ```js
 // userCtrl.js
@@ -68,11 +68,11 @@ module.exports = { registerUser, loginUser }
 
 ## Register a User
 
-For registering a user, we accept data(like username, email and password) from the user and then:
+For registering a user, we accept data(like username, email, and password) from the user and then:
 
 1) If the email already exists, we return with status code `400` and message `Email already exists`.
-2) Else, we encrypt the password using `hash` method of bcrypt.
-3) And then we create a new user in the database with the username, email and hashed password.
+2) Else, we encrypt the password using the `hash` method of bcrypt.
+3) And then we create a new user in the database with the username, email, and hashed password.
 
 ```js
 // ...
@@ -117,10 +117,10 @@ const registerUser = async (req, res) => {
 It is very similar to registering the user. Here, we accept data of email and password from the user. Then:
 
 1) Check if the user exists
-2) If user doesn't exist, we return with a status of `500` and warning message saying `User does not exist`.
+2) If the user doesn't exist, we return with a status of `500` and a warning message saying `User does not exist`.
 3) Else we check if it is the correct password. We use the `compare` method to match the passwords.
-    - If password doesn't match we return a error message `Incorrect password`.
-4) If login was success, we send the success message.
+    - If the password doesn't match we return an error message `Incorrect password`.
+4) If the login was a success, we send the success message.
 
 ```js
 // ...
@@ -157,7 +157,7 @@ const loginUser = async (req, res) => {
 
 ## Token authentication
 
-If the user tries to login, we should keep the user logged in for sometime until he/she wants to logout. This functionality can be implemented using [JSON web tokens](https://jwt.io/). We can create a JSON web token using the user's id, username and `sign` method of [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) library. For making the token unique, it is created using a secret that belongs to you only. Create a new environment variable and assign your secret.
+If the user tries to log in, we should keep the user logged in for some time until he/she wants to log out. This functionality can be implemented using [JSON web tokens](https://jwt.io/). We can create a JSON web token using the user's id, username, and `sign` method of the [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) library. For making the token unique, it is created using a secret that belongs to you only. Create a new environment variable and assign your secret.
 
 ```js
 const jwt = require('jsonwebtoken')
@@ -183,7 +183,7 @@ const loginUser = async (req, res) => {
 // ...
 ```
 
-Here, `expiresIn` option in `sign` method is the time until the token expires(`1d` = 1 day).
+Here, `expiresIn` option in the `sign` method is the time until the token expires(`1d` = 1 day).
 
 ## Verifying Token
 
@@ -193,8 +193,8 @@ In the *middleware* function, we need to access the `Authorization` header of th
 
 1) If there is no token, we return with status `400` and message `Invalid Authentication`.
 2) Else, we verify the token using `verify` method of `jsonwebtoken`.
-    - If, the token is invalid, we return error message of `Invalid token`.
-    - Else, we create the `user` field in request with the data from the token.
+    - If the token is invalid, we return the error message of `Invalid token`.
+    - Else, we create the `user` field in the request with the data from the token.
 3) Then the next function in the request-response cycle will be executed.
 
 ```js
@@ -236,7 +236,7 @@ For verifying the token, we extract the token from the `Authorization` header an
 
 1) If there is no token, the user is not verified, return false
 2) Then verify the token, using `verify` method of `jsonwebtoken`.
-3) Check if user exists in our database
+3) Check if the user exists in our database
     - If doesn't exist, return false
     - Else, return true.
 
@@ -268,6 +268,4 @@ const verifyUser = (req, res) => {
 // ...
 ```
 
-> Note: We should test each and every endpoint we create. If any error occurs, we should troubleshoot at the same time. In this tutorial, I have dedicated a seperate chapter for testing the endpoins we create using Postman.
-
-The project so far will be like [this]().
+> Note: We should test every endpoint we create. If any error occurs, we should troubleshoot at the same time. In this tutorial, I have dedicated a separate chapter for testing the endpoints we create using Postman.

@@ -2,11 +2,11 @@
 
 Now we have a react application to render data inside the browser and a server to get data. Let's connect the front-end to the back-end.
 
-You can use JavaScript built-in [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) for making HTTP requests to rhe server. Instead we are going to use `axios` which makes sending requests lot easier than `fetch` method. Keep the server running whole time.
+You can use JavaScript built-in [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) for making HTTP requests to the server. Instead, we are going to use `axios` which makes sending requests a lot easier than the `fetch` method. Keep the server running the whole time.
 
 ## Proxy
 
-[Proxy](https://create-react-app.dev/docs/proxying-api-requests-in-development/) is used in development environment to make communication between server and client easier. We should add `proxy` field in `package.json` of our react application. It redirects the requests made to the base url to the proxy url, that is our backend.
+[Proxy](https://create-react-app.dev/docs/proxying-api-requests-in-development/) is used in the development environment to make communication between server and client easier. We should add the `proxy` field in `package.json` of our react application. It redirects the requests made to the base URL to the proxy URL, which is our backend.
 
 ```diff
 // package.json
@@ -17,13 +17,13 @@ You can use JavaScript built-in [fetch](https://developer.mozilla.org/en-US/docs
 
 ```
 
-## Sending data to server
+## Sending data to the server
 
 We use `axios.post` method to send data to the server. Navigate to `/src > /components > /notes > Login.js`. Let's add the registration functionality. 
 
 ### Setting up toast
 
-Toast is something that just pops up with some message. We will use the `useToast` method from chakra UI. Refer the documentation for more information about [toast](https://chakra-ui.com/docs/feedback/toast).
+Toast is something that just pops up with some message. We will use the `useToast` method from chakra UI. Refer to the documentation for more information about [toast](https://chakra-ui.com/docs/feedback/toast).
 
 ```js
 // src/components/Login.js
@@ -58,7 +58,7 @@ On submitting the Registration form, we should send the data of the user for reg
 For registering a user, 
 1) We should send the form data to the server using HTTP POST.
 2) Then we should clear the `user` state and form for another registration.
-3) We should display the success message if everything completed and got the response, else dispaly the error message if occurs.
+3) We should display the success message if everything is completed and got the response, else display the error message if occurs.
 
 ```js
 // src/components/Login.js
@@ -102,11 +102,11 @@ const Login = () => {
 }
 ```
 
-Now try to register the user, you should get redirected to `Login` form and get a message saying `Registered Successfully`. If you try to register again with the same email, you should see an error messsage saying `Email already exists`. These are the responses coming from the server.
+Now try to register the user, you should get redirected to the `Login` form and get a message saying `Registered Successfully`. If you try to register again with the same email, you should see an error message saying `Email already exists`. These are the responses coming from the server.
 
 ## Login a user
 
-Similar to registration, you should send the credentials as the data to the server and retrive the token for storing it in `localStorage` of the browser for future use. Also set the `isLogin` to true, that renders the notes component.
+Similar to registration, you should send the credentials as the data to the server and retrieve the token for storing it in `localStorage` of the browser for future use. Also set the `isLogin` to true, which renders the notes component.
 
 ```js
 // src/components/Login.js
@@ -149,15 +149,17 @@ const Login = ({ setIsLogin }) => {
 }
 ```
 
-Now if you try to login in, you will be redirected to notes component. If any error occurs, you should recieve message saying the error. When you open Dev tools, you can see the token created in `LocalStorage`.
+Now if you try to login in, you will be redirected to the notes component. If any error occurs, you should receive a message saying the error. When you open Dev tools, you can see the token created in `LocalStorage`.
+
+![token saved in localstorage](/assests/36-userToken.png)
 
 ## Next time login
 
-If you have once logged in, you can stay log in until the token expires, when you open the application another time, it should check for the token and redirect you to notes component, without asking to login.
+If you have once logged in, you can stay log in until the token expires, when you open the application another time, it should check for the token and redirect you to the notes component, without asking to login.
 
 ## The Effect Hook
 
-The `useEffect()` hook accepts a function as argument. The function runs when the component is first rendered, and on every subsequent rerender/update. React first updates the DOM, then calls any function passed to `useEffect()` without blocking the UI. We sould check whether there is a token in the `localStorage` and whether it is valid or not.
+The `useEffect()` hook accepts a function as an argument. The function runs when the component is first rendered, and on every subsequent rerender/update. React first updates the DOM, then calls any function passed to `useEffect()` without blocking the UI. We should check whether there is a token in the `localStorage` and whether it is valid or not.
 
 ```js
 // src/App.js
@@ -192,11 +194,11 @@ const App = () => {
 
 ```
 
-The `checkLogin` function is called after rendering the UI. It checks local storage for token, if there is a token it sends a GET request to the route `/users/verify`. It responds `true` if the token is valid or `false` if the token is invalid. For sending a request, we can specify the headers as option in the request. If the token is valid, we set the `isLogin` to true which redirects you to notes component without login.
+The `checkLogin` function is called after rendering the UI. It checks local storage for token, if there is a token it sends a GET request to the route `/users/verify`. It responds `true` if the token is valid or `false` if the token is invalid. For sending a request, we can specify the headers as an option in the request. If the token is valid, we set the `isLogin` to true which redirects you to the notes component without login.
 
 ## Log out
 
-To logout from the account, you can just delete the token stored in local storage and set the `isLogin` to false.
+To log out from the account, you can just delete the token stored in local storage and set the `isLogin` to false.
 
 ```js
 // src/components/notes/Header.js
@@ -218,8 +220,8 @@ const Header = ({ setIsLogin }) => {
 // ...
 ```
 
-After logging in you can logout by clicking the `Logout` button in the header.
+After logging in you can log out by clicking the `Logout` button in the header.
 
-At this point, our application has a fully functioning authentication system. The approch we used is a bit risky. Storing token in local storage might contain a security risk if the application has a security vulnerability that allows [Cross Site Scripting](https://owasp.org/www-community/attacks/xss/) (XSS) attacks. You should store the token in [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies) to restrict access using JavaScript. It renduces the risk to some extinct.
+At this point, our application has a fully functioning authentication system. The approach we used is a bit risky. Storing tokens in local storage might contain a security risk if the application has a security vulnerability that allows [Cross-Site Scripting](https://owasp.org/www-community/attacks/xss/) (XSS) attacks. You should store the token in [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies) to restrict access using JavaScript. It reduces the risk to some extinct.
 
-You can find the progress of the application [here]().
+You can find the progress of the application [here](https://github.com/giridhar7632/mern-notes-app/tree/897feecefbf3a2d7a770d82384bb04548562872d).

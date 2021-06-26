@@ -2,9 +2,9 @@
 
 ## Getting notes from the server
 
-We can get all the data from the sever using `get` method of axios. We should add the header `Authorization` with the user token to get the notes.
+We can get all the data from the server using the `get` method of axios. We should add the header `Authorization` with the user token to get the notes.
 
-Navigate to `Home.js`and create a function `getNotes`. When the component renders, we should get the token from the local storage and send the HTTP GET request to the server. Then set the state(`notes`) to the array we got from the database.
+Navigate to `Home.js` and create a function `getNotes`. When the component renders, we should get the token from the local storage and send the HTTP GET request to the server. Then set the state(`notes`) to the array we got from the database.
 
 ```js
 // src/components/notes/Home.js
@@ -27,7 +27,7 @@ const Home = () => {
 
   useEffect(() => {
     // getting token from the local storage
-    const token = localStorage.getItem('tokenStore')
+    const token = localStorage.getItem('userToken')
     setToken(token)
     if (token) {
       getNotes(token)
@@ -40,7 +40,7 @@ const Home = () => {
 
 ## Sending notes to the server
 
-Now let's implement the functionality to create a new note in the database using front-end. Navigate to `CreateNote.js` component. Create the `addToast` function just like we did in the `Login.js` component. Then we should create a function to send the note to the server. Only a loggged in user with a valid token can create the note. So we have to send the token with the POST request in the `Authorization` header.
+Now let's implement the functionality to create a new note in the database using the front-end. Navigate to the `CreateNote.js` component. Create the `addToast` function just like we did in the `Login.js` component. Then we should create a function to send the note to the server. Only a logged-in user with a valid token can create the note. So we have to send the token with the POST request in the `Authorization` header.
 
 ```js
 // src/components/notes/CreateNote.js
@@ -93,13 +93,13 @@ const CreateNote = () => {
 // ...
 ```
 
-The `createNote` function sends the form data to server, displays the success message and returns to the home page. The [useHistory](https://reactrouter.com/web/api/Hooks/usehistory) hook of react-router-dom facilitates in returning to the home page. If any error occurs, it just returns to the home page. You should add `onSubmit` event handler to the form.
+The `createNote` function sends the form data to the server, displays the success message, and returns to the home page. The [useHistory](https://reactrouter.com/web/api/Hooks/usehistory) hook of react-router-dom facilitates returning to the home page. If any error occurs, it just returns to the home page. You should add the `onSubmit` event handler to the form.
 
-Try to add a note, you can see that the note gets added to the database and it displayed on the screen.
+Try to add a note, you can see that the note gets added to the database and is displayed on the screen.
 
 ## Updating notes in the server
 
-You can easily update the notes using HTTP PUT request. The `EditNote` component first gets the specific note from the server and populate the form with that data. After you completed editing the data in the form it sends PUT request to the same endpoint which updated the data in the server.
+You can easily update the notes using the HTTP PUT request. The `EditNote` component first gets the specific note from the server and populates the form with that data. After you completed editing the data in the form it sends a PUT request to the same endpoint which updated the data in the server.
 
 ```js
 // src/components/notes/EditNote.js
@@ -202,4 +202,4 @@ const Home = () => {
 
 ```
 
-That is it. We completed building a notes app using MERN stack.
+That is it. We completed building a notes app using the MERN stack. Check the progress [here](https://github.com/giridhar7632/mern-notes-app/tree/5933b591540a89b840a059ceed8385a9908ee386).

@@ -9,7 +9,7 @@ A traditional web application has two major components:
 - Client — the user interface, typically web-accessing software available on internet-connected devices (usually a web browser like Chrome or Firefox).
 - Server — the computers which serve web pages and applications to the client.
 
-![Client-Server]()
+![Client-Server](/assests/07-client-server.png)
 
 The **Client** and **Server** communicate with each other using the [`HTTP`](https://developer.mozilla.org/en-US/docs/Web/HTTP) protocol (HyperText Transfer Protocol). These are like layers of web development. If you focus on creating the client-side, you are a front-end developer. Or if you develop some server-side stuff then you are a back-end developer. If you can do both well, it is full-stack development. 
 
@@ -26,7 +26,7 @@ There is another component for developing full-stack web applications, it is the
 
 For this project, we are going to create a server that responds to some commonly used requests: `GET`, `POST`, `PUT` and `DELETE`. These correspond to the basic operations using the database: `Read`, `Create`, `Update` and `Delete`. In short, we call them **CRUD** operations.
 
-![CRUD]()
+![CRUD](/assests/08-CRUD.png)
 
 ## Simple webserver
 
@@ -137,4 +137,4 @@ Here, [express.json](https://expressjs.com/en/4x/api.html#express.json) and [exp
 
 The `cors()` is the third-party middleware function used to enable Cross origin requests.
 
-You can find the progress of the project [here]().
+You can find the progress of the project [here](https://github.com/giridhar7632/mern-notes-app/tree/925aaf6e5f17e82828ef768c3fac24b74009dfa5).

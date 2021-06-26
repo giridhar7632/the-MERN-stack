@@ -1,6 +1,6 @@
 # THE **MERN** STACK — REACT FRONT-END PART 2
 
-In this chapter let's create the components for displaying notes. Create a new folder `notes` inside the components folder and add four files: 1) `Header.js`, 2) `CreateNote.js`, 3) `EditNote.js` and 4) `Home.js`.
+In this chapter, let's create the components for displaying notes. Create a new folder `notes` inside the `components` folder and add four files: 1) `Header.js`, 2) `CreateNote.js`, 3) `EditNote.js` and 4) `Home.js`.
 
 ## CreateNote.js
 
@@ -174,7 +174,7 @@ const Header = ({ setIsLogin }) => {
   }
 
   return (
-    <Flex justifyContent="space-between" w="100%" flexDirection="row">
+    <Flex justifyContent="space-between" w="100%" flexDirection="row" mb={4}>
       <Flex justifyContent="center" alignItems="center" mb={4}>
         <FaEdit size="24px" />
         <Text ml={4} textAlign="center" fontWeight="bold" fontSize="2xl">
@@ -182,10 +182,12 @@ const Header = ({ setIsLogin }) => {
         </Text>
       </Flex>
       <Flex justifyContent="space-between">
-        <Button variant="outline" size="md">
-          <Link to="/create"> Add Note </Link>
-        </Button>
-        <Button onClick={logOut} mr={2} variant="solid" size="md">
+        <Link to="/create">
+          <Button variant="outline" size="md" mx={3}>
+            Add Note
+          </Button>
+        </Link>
+        <Button onClick={logOut} mx={3} variant="solid" size="md">
           Logout
         </Button>
         <ColorModeSwitcher />
@@ -341,4 +343,4 @@ export default Notes
 
 ```
 
-Check if all the router are working or not. Find the progress of the project [here]().
+Check if all the router are working or not. Find the progress of the project [here](https://github.com/giridhar7632/mern-notes-app/tree/c1aadbd69be152bb290ac8cc91f4be899a3937b1).

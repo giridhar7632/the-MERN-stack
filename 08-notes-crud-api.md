@@ -6,7 +6,7 @@ Let's create the API to implement the **CRUD** of notes.
 
 |URL|HTTP method|functionality|
 |----|----|----|
-|/api/notes|GET|fetches all the notes in database|
+|/api/notes|GET|fetches all the notes in the database|
 |/api/notes|POST|creates new note|
 |/api/notes/:id|GET|fetches the data of note with that specified id|
 |/api/notes/:id|PUT|replaces the data of note with new data|
@@ -14,7 +14,7 @@ Let's create the API to implement the **CRUD** of notes.
 
 ## Notes Router
 
-Create a new file named `notesRouter.js` in routers folders. Try to implement the above mentioned routes, with the names of controller functions.
+Create a new file named `notesRouter.js` in routers folders. Try to implement the above-mentioned routes, with the names of controller functions.
 
 Here's the `notesRouter.js` file looks like.
 
@@ -36,9 +36,9 @@ router
 module.exports = router
 ```
 
-Here, the `auth` middleware is also added to the method, so that it adds restricts only logged in users can access these routes.
+Here, the `auth` middleware is also added to the method, so that it adds restricts only logged-in users can access these routes.
 
-Add the base route for this router in `index.js` file.
+Add the base route for this router in the `index.js` file.
 
 ```js
 // index.js
@@ -58,7 +58,7 @@ Add a new file named `notesCtrl.js` to the `controllers` folder.
 
 ### Get Notes
 
-The HTTP GET method corresponds to the Read operation in database. It returns all the data in the database.
+The HTTP GET method corresponds to the *read* operation in the database. It returns all the data in the database.
 
 ```js
 const Notes = require('../models/note.model.js')
@@ -89,11 +89,11 @@ const getNote = async (req, res) => {
 }
 ```
 
-The `:id` in the route is the paramater, it can be accessed from the `params` field of the request. Here, we fetch the note that corresponds to the id in the URL.
+The `:id` in the route is the parameter, it can be accessed from the `params` field of the request. Here, we fetch the note that corresponds to the id in the URL.
 
 ### Post Notes
 
-The HTTP POST method corresponds to the Create operation in database. It creates a new entry in the database using the data in the request.
+The HTTP POST method corresponds to the *create* operation in the database. It creates a new entry in the database using the data in the request.
 
 1) We create the note using the `Notes` model using the request data.
 2) Save the note in the database and send the response `Notes created`.
@@ -124,7 +124,7 @@ const createNotes = async (req, res) => {
 
 ### Put Note
 
-The HTTP PUT method corresponds to the Update operation of database. You can access the specific note using the `findOneAndUpdate` of `Notes` model.
+The HTTP PUT method corresponds to the *update* operation of the database. You can access the specific note using the `findOneAndUpdate` of `Notes` model.
 
 ```js
 // ...
@@ -167,8 +167,8 @@ const deleteNote = async (req, res) => {
 module.exports = { getNotes, createNotes, getNote, updateNote, deleteNote }
 ```
 
-This completes the backend of our application. We implemented the authentication using JSON Web tokens and created an API for implementing **CRUD** operations.
+This completes the backend of our application. We implemented the authentication using JSON Web Tokens and created an API for implementing **CRUD** operations.
 
-You can find the progress of the project [here]().
+You can find the progress of the project [here](https://github.com/giridhar7632/mern-notes-app/tree/0997dc5fd238ef30ab262ded192f07d1d4e8f6a6).
 
-In the next chapter, Let's test whether our pplication works as expected or not.
+In the next chapter, Let's test whether our application works as expected or not.
