@@ -306,7 +306,7 @@ export default Home
 
 The design of note will be like this:
 
-![note]()
+![note](/assests/note_design.png)
 
 You cannot see the notes yet, if `notes` is an empty array, it will display message "No Notes Added".
 
